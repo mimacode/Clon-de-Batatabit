@@ -1,0 +1,571 @@
+/* 1. Posicionamiento
+    2. Modelo de caja
+    3. Tipografía
+    4. Visuales
+    5. Otros */
+:root{
+    --DM:'DM Sans', sans-serif;
+    --inter: 'Inter', sans-serif;
+    --Linear-BG: linear-gradient(207.8deg, #201E1C 16.69%, #F7931A 100%);
+    --bitcoin-orange: #F7931A;
+    --soft-orange:#FFE9D5;
+    --secundaryBlue:#1A9AF7;
+    --softBLue: #E7F5FF;
+    --warmBlack:#201E1C;
+    --warmBlackweak:#282623;
+    --grey:#BABABA;
+    --offWhite:#FAF8F7;
+    --justWhite:#FFFFFF;
+
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 62.5%;
+    font-family: var(--DM);
+}
+header{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    min-width: 320px; /* El header no se va hacer más chico que 320px */
+    height: 334px;
+    text-align: center;
+    background: var(--Linear-BG);
+}
+header img{
+    width: 150px;
+    height: 24px;
+    margin-top: 60px;
+    align-self: center; /* como este elemento está dentro del contenedor header que tiene un display flex hereda la propiedad align-self */
+}
+.header--title-container{
+    width: 90%;
+    min-width: 288px; /* No se va hacer más chico de 288px */
+    max-width: 900px; /* Una vez llegue a los 900px va dejar de crecer */
+    height: 218px;
+    margin-top: 40PX;
+    text-align: center;
+    align-self: center;
+}
+.header--title-container h1{
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+    color: var(--justWhite);
+}
+.header--title-container p{
+    margin-top: 25px;
+    font-size: 1.4rem;
+    font-weight: 500px;
+    line-height: 1.8rem;
+    color: var(--soft-orange);
+}
+.header--title-container .header--button{
+    padding: 15px;
+    width: 229px;
+    height: 48px;
+    background-color: var(--offWhite);
+    box-shadow: 0 4px 8px rgba(89,73,30,0.16);
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -24px);
+    /* otra forma de posicionarlo al centro:
+    .header__title-container .header__button {
+	position: absolute;
+	top: calc(100% - 24px);
+	left: calc(50% - 114.5px);
+} */
+    border: none;
+    border-radius: 5px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--warmBlackweak);
+}
+.header--button span{
+display: inline-block;
+width: 13px;
+height: 8px;
+margin-left: 10px;
+background-image: url("assets/icons/down-arrow.svg");
+}
+main{
+    width: 100%;
+    height: auto;
+    background-color: var(--offWhite);
+}
+.main-exchange-container{
+    width: 100%;
+    height: auto;
+    padding-top: 80px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+.main-exchange-container--title{
+    width: 100%;
+    min-width: 288px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.main-exchange-container .backgroudImg{
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    background-image: url("assets/img/Bitcoin.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.main-exchange-container h2{
+    margin-bottom: 30px;
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+    color: var(--warmBlackweak);
+}
+.main-exchange-container p{
+    margin-bottom: 30px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.6rem;
+    color: #757575;
+}
+.main-tables-container{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    height: 38rem;
+    overflow-x: scroll;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+}
+#table1,#table2,table3{
+    scroll-snap-align: center;
+    margin: 0 30px;
+}
+.main-currency-table{
+    width: 70%;
+    min-width: 235px;
+    max-width: 360px;
+    height: 360px;
+    margin: 0 auto;
+    font-family: var(--inter), sans-serif;
+}
+.main-currency-table .currency-table--title {
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 2.3rem;
+    color: var(--bitcoin-orange);
+}
+.main-currency-table .currency-table--title2{
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 2.3rem;
+    color: var(--secundaryBlue);
+}
+.currency-table--container{
+    width: 90%;
+    min-width: 230px;
+    max-width: 300px;
+    height: 250px;
+    margin: 0 auto;
+}
+.currency-table--container table{
+    width: 100%;
+    height: 100%;
+}
+.currency-table--container td{
+    width: 50%;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.9rem;
+    color: var(--grey);
+    background-color: var(--justWhite);
+}
+.currency-table--container .table__top-left{
+    border-radius: 15px 0 0 0;
+} 
+.currency-table--container .table__top-right{
+    border-radius: 0 15px 0 0;
+}
+.currency-table--container .table__bottom-left{
+    border-radius: 0 0 0 15px;
+}
+.currency-table--container .table__bottom-rigth{
+    border-radius: 0 0 15px 0;
+}
+.currency-table--container .table__right{
+    font-size: 1.4rem;
+    font-weight: normal;
+    line-height: 1.7rem;
+    color: #757575;
+}
+.currency-table--container .down{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-left: 10px;
+    background-image: url(assets/icons/trending-down.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.currency-table--container .up{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-left: 10px;
+    background-image: url(assets/icons/trending-up.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.currency-table--date{
+    width: 190px;
+    height: 30px;
+    background-color: var(--soft-orange);
+    margin: 0 auto;
+    margin-top: 15px;
+    padding: 8px;
+    border-radius: 8px;
+}
+.currency-table--date p, .currency-table--date2 p{
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    color: var(--warmBlack);
+}
+.currency-table--date2{
+    width: 190px;
+    height: 30px;
+    background-color: var(--softBLue);
+    margin: 0 auto;
+    margin-top: 15px;
+    padding: 8px;
+    border-radius: 8px;
+}
+.main-product-detail{
+    position: relative;
+    width: 100%;
+    min-width: 320px;
+    height: auto;
+    padding: 20px 10px; 
+    background-color: var(--warmBlack);
+}
+.product-detail--batata-logo{
+    position: absolute;
+    width: 40px;
+    height: 25px;
+    top: -10px;
+    left: calc(50% - 20px);
+    background-image: url(assets/icons/batata.svg);
+}
+.product-detail--title{
+    width: 90%;
+    min-width: 288px;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 50px;
+    text-align: center;
+}
+.product-detail--title h2{
+    margin-bottom: 20px;
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+    color: var(--justWhite);
+}
+.product-detail--title p{
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: #808080;
+}
+.product-detail--card{
+    width: 90%;
+    min-width: 288px;
+    max-width: 400px;
+    height: 150px;
+    margin: 15px auto;
+    padding: 15px;
+    background-color: var(--warmBlackweak);
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.16);
+}
+.product-detail--card .clock{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-bottom: 10px;
+    background-image: url(assets/icons/clock.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.product-detail--card .eye{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-bottom: 10px;
+    background-image: url(assets/icons/eye.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.product-detail--card .money{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-bottom: 10px;
+    background-image: url(assets/icons/dollar-sign.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.product-detail--card .check{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-bottom: 10px;
+    background-image: url(assets/icons/check-circle.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.product--card-title{
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 1.8rem;
+    color: var(--justWhite);
+}
+.product--card-body{
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: #808080;
+}
+.main--product-img{
+    width: 100%;
+    min-width: 320px;
+    height: 50vh;
+    background-image: url(assets/img/bitcoinbaby2x.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    text-align: center;
+}
+.main--product-img h2{
+    padding-top: 60px;
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+    color: var(--justWhite);
+}
+#SeccinPlanes{
+    background-color:var(--offWhite);
+    width: 100%;
+    min-height: 40vh;
+}
+#SeccinPlanes .intro-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 70px;
+    margin-bottom: 10px;
+}
+#SeccinPlanes .intro{
+    width: 95%;
+    height: auto;
+    text-align: center;
+}
+#SeccinPlanes .intro h2{
+    font-size: 2.4rem;
+    line-height: 2.6rem;
+    margin-bottom: 20px;
+}
+#SeccinPlanes .intro p{
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: #757575;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.Planes-cards, .Planes-cards-2, .Planes-cards-3{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    scroll-snap-align: center;
+    margin: 0 5px;
+}
+.Planes-cards .button, .Planes-cards-2 .button, .Planes-cards-3 .button{
+    position: absolute;
+    left: calc(50% - 5rem);
+    top: 0;
+    width: 10.1rem;
+    height: 3.1rem;
+    padding: 20px;
+    background-color: var(--bitcoin-orange);
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 1.5rem;
+    font-family: var(--inter);
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Planes-cards .card, .Planes-cards-2 .card, .Planes-cards-3 .card{
+    width: 19rem;
+    min-width: 320px;
+    min-height: 24.7rem;
+    background-color: var(--justWhite);
+    align-self: center;
+    margin-top: 2rem;
+    margin-bottom: 6rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(89, 73, 30, 0.16);
+}
+.card .title{
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    margin-top: 3.5rem;
+    margin-bottom: 2rem;
+}
+.card .logoPrecio-container{
+    display: flex;
+    justify-content: center;
+}
+.card .logoPrecio-container .icono{
+    width: 0.8rem;
+    height: 1.5rem;
+    background-image: url(assets/icons/dollar-sign.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-right: 1rem;
+}
+.card .logoPrecio-container .containerPrecio{
+    position: relative;
+    bottom: 1rem;
+    width: 10rem;
+    height: 5.6rem;
+}
+.card .logoPrecio-container .Precio{
+    color: rgb(0, 0, 0);
+    font-size: 5.2rem;
+    line-height: 6.3rem;
+    font-family: var(--inter);
+    font-weight: bold;
+}
+.card .description-container{
+    width: 15.8rem;
+    min-height: 3rem;
+    position: relative;
+    left: calc(50% - 7.5rem);
+}
+.card .description-container .description{
+    margin-top: 0.9rem ;
+    font-family: var(--inter);
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.5rem;
+    color: #757575;
+    margin-bottom: 1rem;
+}
+.card .containerCardButton{
+    width: 15.1rem;
+    min-height: 4.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    left: calc(50% - 7.5rem);
+    border: 2px solid var(--bitcoin-orange);
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: var(--justWhite);
+}
+.card .containerCardButton .description{
+    font-size: 1.4rem;
+    font-weight: bold;
+    line-height: 1.8rem;
+}
+.card .containerCardButton .icon-arrowrigth{
+    width: 2rem;
+    height: 3rem;
+    background-image: url(assets/icons/orange-right-arrow.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-left: 1rem;
+}
+.cards-container-slider{
+    display: flex;
+    height: 31.6rem;
+    overflow-x: scroll;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+}
+footer{
+    width: 100%;
+    min-height: 15rem;
+    background-color: var(--bitcoin-orange);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.redes ul{
+    list-style: none;
+    margin-left: 3rem;
+}
+.redes li{
+    margin-bottom: 1rem;
+}
+.redes a{
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+footer .logoYfecha{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-right: 4rem;
+}
+footer .logoYfecha .logo{
+    width: 40px;
+    height: 25px;
+    background-image: url(assets/icons/batata.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+footer .logoYfecha p{
+    font-size: 8px;
+    font-weight: 500;
+    color: var(--soft-orange);
+    margin: 1rem -2rem;
+}
+
+
+
+
